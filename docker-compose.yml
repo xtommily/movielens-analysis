@@ -23,6 +23,9 @@ services:
        POSTGRES_USER: postgres
        POSTGRES_PASSWORD: admin
        POSTGRES_DB: movies
+     volumes:
+       - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+       - ./data:/var/lib/postgresql
 
   adminer:
     image: adminer
